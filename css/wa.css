@@ -1,0 +1,135 @@
+/* WhatsApp: tombol melayang + kartu layanan bantuan */
+.pinjampasti-wa-float {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 1100;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #25D366;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 14px 20px;
+    border-radius: 999px;
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pinjampasti-wa-float:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(37, 211, 102, 0.55);
+}
+
+.pinjampasti-wa-float svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+    flex-shrink: 0;
+}
+
+.pinjampasti-support {
+    padding: 80px 0;
+    background: #f7fafc;
+}
+
+.pinjampasti-support-intro {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 48px;
+    color: #4a5568;
+}
+
+.pinjampasti-support-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+}
+
+.pinjampasti-support-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 16px;
+    padding: 28px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pinjampasti-support-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(31, 190, 138, 0.18);
+}
+
+.pinjampasti-support-card h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.pinjampasti-support-card p {
+    color: #4a5568;
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+.pinjampasti-wa-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #25D366;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 12px 20px;
+    border-radius: 12px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.pinjampasti-wa-btn:hover {
+    background: #1ebe5a;
+    transform: translateY(-2px);
+}
+
+.pinjampasti-wa-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+.pinjampasti-support-card.danger .pinjampasti-wa-btn {
+    background: #e53e3e;
+}
+
+.pinjampasti-support-card.danger .pinjampasti-wa-btn:hover {
+    background: #c53030;
+}
+
+@media (max-width: 768px) {
+    .pinjampasti-wa-float span { display: none; }
+    .pinjampasti-wa-float { padding: 14px; right: 16px; bottom: 16px; }
+}
+
+.pinjampasti-support-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: rgba(31, 190, 138, 0.12);
+    color: #1FBE8A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+}
+
+.pinjampasti-support-icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+.pinjampasti-support-card.danger .pinjampasti-support-icon {
+    background: rgba(229, 62, 62, 0.12);
+    color: #e53e3e;
+}

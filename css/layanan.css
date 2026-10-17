@@ -1,0 +1,627 @@
+/* Base Styles - Same as index.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'SF Pro Display', 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    color: #2c3e50;
+    overflow-x: hidden;
+}
+
+.pinjampasti-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* Header Styles - Same as index.css */
+.pinjampasti-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.pinjampasti-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    height: 80px;
+}
+
+.pinjampasti-brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.pinjampasti-logo {
+    width: 50px;
+    height: 50px;
+    background-image: url('../img/company-logo.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    flex-shrink: 0;
+}
+
+.pinjampasti-brand-name {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1FBE8A;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.pinjampasti-nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+.pinjampasti-nav-menu a {
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: 500;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.pinjampasti-nav-menu a:hover,
+.pinjampasti-nav-active {
+    color: #1FBE8A;
+}
+
+.pinjampasti-nav-menu a:hover::after {
+    width: 100%;
+}
+
+.pinjampasti-nav-menu a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background: linear-gradient(90deg, #1FBE8A, #16A374);
+    transition: width 0.3s ease;
+}
+
+.pinjampasti-nav-active::after {
+    width: 100%;
+}
+
+.pinjampasti-menu-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    gap: 4px;
+}
+
+.pinjampasti-menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: #2c3e50;
+    transition: all 0.3s ease;
+}
+
+.pinjampasti-main {
+    margin-top: 80px;
+}
+
+/* Services Hero Section */
+.pinjampasti-services-hero {
+    background: linear-gradient(135deg, #1FBE8A 0%, #059669 100%);
+    padding: 120px 0 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.pinjampasti-services-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.3;
+}
+
+.pinjampasti-services-hero .pinjampasti-hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.pinjampasti-hero-title {
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    background: linear-gradient(45deg, #ffffff, #d1fae5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.pinjampasti-hero-subtitle {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Section Title */
+.pinjampasti-section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 60px;
+    color: #2c3e50;
+    position: relative;
+}
+
+.pinjampasti-section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #1FBE8A, #16A374);
+    border-radius: 2px;
+}
+
+/* Products Overview */
+.pinjampasti-products-overview {
+    padding: 100px 0;
+    background: #f8fafc;
+}
+
+.pinjampasti-products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 60px;
+    align-items: start;
+}
+
+.pinjampasti-product-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.pinjampasti-product-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(31, 190, 138, 0.05), rgba(5, 150, 105, 0.05));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.pinjampasti-product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 80px rgba(31, 190, 138, 0.2);
+}
+
+.pinjampasti-product-card:hover::before {
+    opacity: 1;
+}
+
+.pinjampasti-product-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.pinjampasti-product-card:hover img {
+    transform: scale(1.05);
+}
+
+.pinjampasti-product-content {
+    padding: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.pinjampasti-product-content h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 16px;
+}
+
+.pinjampasti-product-content p {
+    color: #64748b;
+    margin-bottom: 24px;
+    line-height: 1.6;
+}
+
+.pinjampasti-feature-list {
+    list-style: none;
+    margin-bottom: 32px;
+}
+
+.pinjampasti-feature-list li {
+    padding: 8px 0;
+    position: relative;
+    padding-left: 24px;
+    color: #475569;
+}
+
+.pinjampasti-feature-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #1FBE8A;
+    font-weight: bold;
+}
+
+/* Button Styles */
+.pinjampasti-btn-primary {
+    background: linear-gradient(45deg, #16A374, #059669);
+    color: white;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(31, 190, 138, 0.3);
+}
+
+.pinjampasti-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(31, 190, 138, 0.4);
+    background: linear-gradient(45deg, #059669, #047857);
+}
+
+.pinjampasti-btn-secondary {
+    background: transparent;
+    color: #1FBE8A;
+    border: 2px solid #1FBE8A;
+    padding: 14px 30px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.pinjampasti-btn-secondary:hover {
+    background: #1FBE8A;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(31, 190, 138, 0.3);
+}
+
+/* Process Section */
+.pinjampasti-process {
+    padding: 100px 0;
+    background: white;
+}
+
+.pinjampasti-process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    position: relative;
+}
+
+.pinjampasti-step {
+    text-align: center;
+    position: relative;
+}
+
+.pinjampasti-step-number {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #1FBE8A, #16A374);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 auto 24px;
+    box-shadow: 0 10px 30px rgba(31, 190, 138, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.pinjampasti-step:hover .pinjampasti-step-number {
+    transform: scale(1.1);
+}
+
+.pinjampasti-step-content h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 12px;
+}
+
+.pinjampasti-step-content p {
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* Comparison Table */
+.pinjampasti-comparison {
+    padding: 100px 0;
+    background: #f8fafc;
+}
+
+.pinjampasti-comparison-table {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+.pinjampasti-comparison-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.pinjampasti-comparison-table th {
+    background: linear-gradient(135deg, #1FBE8A, #16A374);
+    color: white;
+    padding: 24px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: left;
+}
+
+.pinjampasti-comparison-table td {
+    padding: 20px 24px;
+    border-bottom: 1px solid #e2e8f0;
+    color: #475569;
+}
+
+.pinjampasti-comparison-table tr:hover {
+    background: rgba(31, 190, 138, 0.05);
+}
+
+.pinjampasti-comparison-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Requirements Section */
+.pinjampasti-requirements {
+    padding: 100px 0;
+    background: white;
+}
+
+.pinjampasti-requirements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.pinjampasti-requirement-card {
+    background: #f8fafc;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.pinjampasti-requirement-card:hover {
+    transform: translateY(-5px);
+    border-color: #1FBE8A;
+    box-shadow: 0 20px 50px rgba(31, 190, 138, 0.15);
+}
+
+.pinjampasti-requirement-icon {
+    margin-bottom: 24px;
+}
+
+.pinjampasti-requirement-icon img {
+    width: 80px;
+    height: 80px;
+    transition: transform 0.3s ease;
+}
+
+.pinjampasti-requirement-card:hover .pinjampasti-requirement-icon img {
+    transform: scale(1.1);
+}
+
+.pinjampasti-requirement-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 16px;
+}
+
+.pinjampasti-requirement-card p {
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* CTA Section */
+.pinjampasti-cta {
+    background: linear-gradient(135deg, #1FBE8A 0%, #059669 100%);
+    padding: 100px 0;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.pinjampasti-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.3;
+}
+
+.pinjampasti-cta .pinjampasti-container {
+    position: relative;
+    z-index: 2;
+}
+
+.pinjampasti-cta h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.pinjampasti-cta p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pinjampasti-cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Footer Styles - Same as index.css */
+.pinjampasti-footer {
+    background: #1a202c;
+    color: white;
+    padding: 60px 0 30px;
+}
+
+.pinjampasti-footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.pinjampasti-footer-section h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #1FBE8A;
+}
+
+.pinjampasti-footer-section ul {
+    list-style: none;
+}
+
+.pinjampasti-footer-section ul li {
+    margin-bottom: 12px;
+}
+
+.pinjampasti-footer-section ul li a {
+    color: #cbd5e0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.pinjampasti-footer-section ul li a:hover {
+    color: #1FBE8A;
+}
+
+.pinjampasti-footer-section p {
+    color: #cbd5e0;
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+.pinjampasti-footer-bottom {
+    border-top: 1px solid #2d3748;
+    padding-top: 30px;
+    text-align: center;
+    color: #718096;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .pinjampasti-container {
+        padding: 0 20px;
+    }
+
+    .pinjampasti-navbar {
+        padding: 0 20px;
+    }
+
+    .pinjampasti-brand {
+        gap: 12px;
+    }
+
+    .pinjampasti-brand-name {
+        font-size: 1.5rem;
+    }
+
+    .pinjampasti-nav-menu {
+        display: none;
+    }
+
+    .pinjampasti-menu-toggle {
+        display: flex;
+    }
+
+    .pinjampasti-hero-title {
+        font-size: 2.5rem;
+    }
+
+    .pinjampasti-products-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .pinjampasti-process-steps {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .pinjampasti-requirements-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pinjampasti-cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pinjampasti-comparison-table {
+        overflow-x: auto;
+    }
+
+    .pinjampasti-comparison-table table {
+        min-width: 600px;
+    }
+} 
